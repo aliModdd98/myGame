@@ -195,3 +195,29 @@ document.addEventListener("DOMContentLoaded", () => {
   createBoard();
   startTimer();
 });
+const refreshButton = document.getElementById("refreshButton");
+refreshButton.addEventListener("click", () => {
+  location.reload(); // Reloads the page to restart the game
+});
+document.addEventListener("DOMContentLoaded", () => {
+  const themeToggleBtn = document.getElementById("theme-toggle");
+  const currentTheme = localStorage.getItem("theme");
+
+  // Apply saved theme if it exists in localStorage
+  if (currentTheme) {
+    document.body.setAttribute("data-theme", currentTheme);
+  }
+
+  // Toggle dark/light mode on button click
+  themeToggleBtn.addEventListener("click", () => {
+    let theme = document.body.getAttribute("data-theme");
+
+    if (theme === "dark") {
+      document.body.setAttribute("data-theme", "light");
+      localStorage.setItem("theme", "light");
+    } else {
+      document.body.setAttribute("data-theme", "dark");
+      localStorage.setItem("theme", "dark");
+    }
+  });
+});
