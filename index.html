@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="output.css" rel="stylesheet" />
+    <link href="./assets/style.css" rel="stylesheet" />
+    <title>Flipping Card Game</title>
+  </head>
+  <body
+    class="bg-gray-200 min-h-screen p-6 d-flex flex-col justify-center items-center"
+  >
+  <div class="flex justify-between items-center flex-wrap mx-8 my-6 border-1 border-black">  
+    <div id="score-box" class="p-4 bg-white rounded-lg shadow-md flex justify-start items-center ">
+        <h1 class="p-4 text-sm sm:text-2xl font-bold ">Your Score : </h1>   <div class="text-2xl font-bold mx-4 p-4" id="score">0</div>
+            <div class="p-4  text-xs sm:text-2xl font-bold">Score</div>
+          </div>
+          <div class="flex justify-between md:justify-center items-center flex-grow my-4 sm:my-0">
+            <button id="refreshButton" class="common-button">
+              <img src="./assets/refresh.svg" alt="Refresh" class="icon" />
+            </button>
+            <button id="toggleThemeButton" class="common-button">
+              <img src="./assets/mode.svg" alt="Toggle Theme" class="icon" />
+            </button>
+          </div>   <div class="flex justify-end my-4 space-x-2 text-center">
+          <div id="hours-box" class="p-4 rounded-lg shadow-md">
+            <div class="text-2xl font-bold" id="hours">00</div>
+            <div class="text-sm">Hours</div>
+          </div>
+          <div id="minutes-box" class="p-4 bg-white rounded-lg shadow-md">
+            <div class="text-2xl font-bold" id="minutes">00</div>
+            <div class="text-sm">Minutes</div>
+          </div>
+          <div id="seconds-box" class="p-4 bg-white rounded-lg shadow-md">
+            <div class="text-2xl font-bold" id="seconds">00</div>
+            <div class="text-emerald-500">Seconds</div>
+          </div>
+        </div>
+     
+       
+    </div> </div>
+
+    
+    <div class="flex justify-center items-center mt-12">
+      <div id="game-board" class="grid grid-cols-4 gap-4 w-3/4 max-w-lg">
+        <!-- Cards will be inserted here via JavaScript -->
+      </div>
+    </div>
+
+   
+    <script src="./js/script.js"></script>
+  </body>
+</html>

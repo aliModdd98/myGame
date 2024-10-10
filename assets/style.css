@@ -1,0 +1,118 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  background-color: #f3f4f6;
+  color: #000;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+body[data-theme="dark"] {
+  background-color: #1a202c;
+  color: #f7fafc;
+}
+
+body[data-theme="dark"] .card-front {
+  background-color: #2d3748;
+}
+
+body[data-theme="dark"] .card-back {
+  background-color: #4a5568;
+}
+
+.card {
+  perspective: 1000px;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+}
+
+.card-inner {
+  transition: transform 0.5s;
+  transform-style: preserve-3d;
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.card.flipped .card-inner {
+  transform: rotateY(180deg);
+}
+
+.card-front,
+.card-back {
+  position: absolute;
+  backface-visibility: hidden;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0.5rem;
+}
+
+.card-front {
+  transform: rotateY(180deg);
+  background-color: #f9fafb;
+}
+
+.card-back {
+  background-color: black;
+  color: #f1f1f1;
+  font-size: 2.5rem;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.common-button {
+  width: 60px;
+  height: 60px;
+  border-radius: 0.5rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  background-color: #d1d5db;
+  color: #000;
+  border: none;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.icon {
+  width: 35px;
+  height: 35px;
+}
+
+.common-button:hover {
+  background-color: #b0bec5;
+}
+
+/* Light mode styles */
+#score-box,
+#hours-box,
+#minutes-box,
+#seconds-box {
+  background-color: #ffffff;
+  color: #000000;
+}
+
+/* Dark mode styles */
+body[data-theme="dark"] #score-box,
+body[data-theme="dark"] #hours-box,
+body[data-theme="dark"] #minutes-box,
+body[data-theme="dark"] #seconds-box {
+  background-color: #000000;
+  color: #ffffff;
+}
+
+/* Other existing dark mode styles */
+body[data-theme="dark"] {
+  background-color: #1a202c;
+  color: #f7fafc;
+}
+
+body[data-theme="dark"] .common-button {
+  background-color: #1f2937;
+  color: #f9fafb;
+}
